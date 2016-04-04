@@ -5,7 +5,6 @@ export default Ember.Route.extend({
 
   model: function() {
     return Ember.RSVP.hash({
-      questions: this.store.findAll('question'),
       users: this.store.findAll('user'),
     });
   },
@@ -13,19 +12,19 @@ export default Ember.Route.extend({
   actions: {
     save: function(params) {
       var userId = this.get('session.data.userId');
-      var newQuestion = this.store.createRecord('question', params);
-      
+      var newTicket = this.store.createRecord('ticket', params);
+
       // grab the user record which matches the session service user
       // then add newQuestion to the questions property of that user
       // then save newQuestion
       // then save user
 
       this.store.findRecord('user', userId).then(function (user) {
-        user.get('questions').addObject(newQuestion);
-        newQuestion.save().then(function() {
+        user.get('tickets').addObject(newTicket);
+        newTicket.save().then(function() {
         return user.save();
       });
       });
     }
-  } 
+  }
 });

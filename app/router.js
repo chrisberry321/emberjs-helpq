@@ -12,7 +12,6 @@ Router.map(function() {
   this.route('about');
   this.route('signup');
   this.route('user', {path: '/user/:user_id'});
-  this.route('question', {path: '/question/:question_id'});
 });
 
 export default Router;

@@ -1,9 +1,11 @@
+<p>index.hbs</p>
 {{log session.isAuthenticated}}
 {{log session.data}}
 
-{{question-new save="save" user=model}}
+{{ticket-new save="save" user=model}}
 
-<h1>Questions</h1>
-{{#each model.questions as |question|}}
+<h1>Unresolved Tickets</h1>
+<p>This should only be visible if the logged in user is a teacher</p>
+<!-- {{#each model.questions as |question|}}
   {{question-tile question=question}}
-{{/each}}
+{{/each}} -->

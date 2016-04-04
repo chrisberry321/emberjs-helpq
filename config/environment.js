@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'qna',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
-    firebase: 'https://mklgallegos-qna.firebaseio.com/',
+    firebase: 'https://mklgallegos-helpq.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

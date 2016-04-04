@@ -1,0 +1,19 @@
+<p>ticket-new.hbs</p>
+<div class="new-post-container container">
+    <h1>New Ticket</h1>
+    <div>
+      <form>
+        <div class="form-group">
+          <label for="location">Location</label>
+          {{input class="form-control" value=location id="location"}}
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          {{input class="form-control" value=description id="description"}}
+        </div>
+
+        <button class="btn btn-success" {{action 'save'}}>Submit</button>
+      </form>
+    </div>
+</div>

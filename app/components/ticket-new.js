@@ -1,17 +1,3 @@
-Is there a way to remove models via the console?
-
-Yup! ember destroy <generator-name> <options>.
-For example, if you want to remove a question model you would run the following command:
-$ ember destroy model question
-
-
-Adding timestamps to model properties...
-
-Firebase.ServerValue.TIMESTAMP
-
-this will grab the current timestamp from the Firebase server. Note that this will tightly couple the app with Firebase if you use this to grab the current time.
-
-Example:
 import Ember from 'ember';
 
 export default Ember.Component.extend({

@@ -9,17 +9,17 @@ export default Ember.Controller.extend({
 
     authenticate(params) {
 
-    var ref = new Firebase('https://mklgallegos-qna.firebaseio.com/users'); //Firebase Users URL
+    var ref = new Firebase('https://mklgallegos-helpq.firebaseio.com/users'); //Firebase Users URL
     var returnedRecord; // declare variable
     var returnedRecordId; //declare variable
-    
+
       ref.orderByChild('usernameandpassword').equalTo(params.username + params.password).on("value", function(snapshot) {
         returnedRecord = snapshot.val(); // set variable equal to snapshot.val(), if record not found value will be null
 
         if (returnedRecord) {
           returnedRecordId = Object.keys(returnedRecord)[0]; // set variable equal to the firebase record ID
         }
-        
+
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
       });

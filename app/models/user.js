@@ -5,6 +5,5 @@ export default DS.Model.extend({
   password: DS.attr(),
   usernameandpassword: DS.attr(),
   admin: DS.attr('boolean', { defaultValue: false}),
-  questions: DS.hasMany('question', {async: true}),
-  answers: DS.hasMany('answer', {async: true}),
+  tickets: DS.hasMany('ticket', {async: true}),
 });
