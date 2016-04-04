@@ -1,0 +1,9 @@
+{{log session.isAuthenticated}}
+{{log session.data}}
+
+{{question-new save="save" user=model}}
+
+<h1>Questions</h1>
+{{#each model.questions as |question|}}
+  {{question-tile question=question}}
+{{/each}}

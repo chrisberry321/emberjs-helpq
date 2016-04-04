@@ -1,0 +1,15 @@
+<p>question.hbs</p>
+
+<h1>{{model.title}}</h1>
+<p><i>asked by {{model.user.username}}</i></p>
+<p>{{model.content}}</p>
+
+{{question-edit question=model updateQuestion="updateQuestion"}}
+
+
+{{answer-new save="save" question=model}}
+
+<h1>Answers</h1>
+{{#each model.answers as |answer|}}
+  {{answer-tile answer=answer}}
+{{/each}}

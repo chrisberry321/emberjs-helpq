@@ -1,0 +1,21 @@
+Services are objects that live throughout the span of an Ember application.
+
+Services are singletons. 
+
+In software engineering, the singleton pattern is a design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.
+
+An Ember.Service is nothing more than an Ember.object. the name service is used a convention. If services are placed in a specific Ember CLI folder (app/services) they will be automatically registered and available for injection in any other Ember object.
+
+these service objects can:
+1. keep state around for the duration of an app (state won't survive page reloads)
+2. be used from anywhere in the application
+
+
+a session needs to be injected into the controller/router/component in order for the session service to accessible to that item.
+
+4 Main Building Blocks of Ember Simple Auth
+1. the session
+2. a session store
+3. authenticators
+4. (optionally) authorizors
+
