@@ -5,7 +5,7 @@ export default Ember.Route.extend({
 
   model: function() {
     return Ember.RSVP.hash({
-      users: this.store.findAll('user'),
+      tickets: this.store.findAll('ticket'),
     });
   },
 
