@@ -6,6 +6,7 @@ export default Ember.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
       tickets: this.store.findAll('ticket'),
+      closedTickets: this.store.query('ticket', { orderBy: 'closed', equalTo: true })
     });
   },
 

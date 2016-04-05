@@ -4,14 +4,15 @@
 
 {{ticket-new save="save" user=model}}
 
-<h3>ticket count for the day: <span class="badge">{{model.tickets.length}}</span></h3>
+<h3>ticket count: <span class="badge">{{model.tickets.length}}</span></h3>
+<h3>Average ticket lifespan: {{avg-resolution-time model.closedTickets}} minutes</h3>
 
 <h1>Unresolved Tickets</h1>
 
 {{#each model.tickets as |ticket| }}
-{{#unless ticket.closed}}
-  {{ticket-tile ticket=ticket}}
-{{/unless}}
+  {{#unless ticket.closed}}
+    {{ticket-tile ticket=ticket}}
+  {{/unless}}
 {{/each}}
 
 <h1>Resolved Tickets</h1>
@@ -21,9 +22,3 @@
     {{ticket-tile ticket=ticket}}
   {{/if}}
 {{/each}}
-
-<!-- {{#each model.tickets as |ticket| }}'
-  {{#if ticket.closed}}
-    {{avg-wait-time ticket=ticket}}
-  {{/if}}
-{{/each}} -->
