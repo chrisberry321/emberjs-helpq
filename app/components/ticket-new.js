@@ -3,11 +3,12 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     createTicket: function() {
+      var date = new Date();
       var params = {
         location: this.get('location'),
         summary: this.get('summary'),
         description: this.get('description'),
-        datecreated: Firebase.ServerValue.TIMESTAMP
+        datecreated: date.getTime(),
       };
       this.set('location', null); //clear location input in UI
       this.set('summary', null); //clear summary input in UI
