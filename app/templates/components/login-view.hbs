@@ -7,16 +7,16 @@
           <br>
           <form class="login-form">
             <div class="form-group">
-              <label for="identification">Username</label>
-              {{input class='form-control' id='identification' placeholder='username' value=identification}}
+              <label for="email">Email</label>
+              {{input class='form-control' id='email' placeholder='email' value=email}}
             </div>
 
             <div class="form-group">
               <label for="password">Password</label>
               {{input class='form-control' id='password' placeholder='password' type='password' value=password}}
             </div>
-       
-            <button {{action 'authenticate'}} class="btn btn-success">Log In</button>
+
+            <button {{action 'login'}} class="btn btn-success">Log In</button>
             {{#if errorMessage}}
               <p>{{errorMessage}}</p>
             {{/if}}

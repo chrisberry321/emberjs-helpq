@@ -1,6 +1,7 @@
 <p>index.hbs</p>
-{{log session.isAuthenticated}}
-{{log session.data}}
+{{log  'IS USER AUTHENTICATED?' session.isAuthenticated}}
+{{log 'USER SESSION DATA' session.data}}
+{{log 'CURRENT USER SERVICE DATA' currentUser.content}}
 
 {{ticket-new save="save" user=model}}
 

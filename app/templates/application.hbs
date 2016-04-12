@@ -24,7 +24,7 @@
         {{#nav-link-to 'about'}}<li>ABOUT</li>{{/nav-link-to}}
 
         {{#if session.isAuthenticated}}
-          {{#nav-link-to 'index' invokeAction='invalidateSession'}}<li>LOGOUT</li>{{/nav-link-to}}
+          {{#nav-link-to 'index' invokeAction='logout'}}<li>LOGOUT</li>{{/nav-link-to}}
         {{else}}
           {{#nav-link-to 'login'}}<li>LOGIN</li>{{/nav-link-to}}
         {{/if}}

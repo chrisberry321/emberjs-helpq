@@ -8,7 +8,7 @@ export default Ember.Component.extend({
         summary: this.get('summary'),
         description: this.get('description'),
         datecreated: Firebase.ServerValue.TIMESTAMP
-      }
+      };
       this.set('location', null); //clear location input in UI
       this.set('summary', null); //clear summary input in UI
       this.set('description', null); //clear description input in UI

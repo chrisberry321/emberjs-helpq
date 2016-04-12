@@ -6,17 +6,28 @@
           <h3>Create An Account</h3>
           <br>
           <form class="login-form">
+
             <div class="form-group">
-              <label for="identification">Username</label>
-              {{input class='form-control' id='identification' placeholder='username' value=identification}}
+              <label for="firstName">First Name</label>
+              {{input class='form-control' id='firstName' placeholder='first name' value=firstName}}
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              {{input class='form-control' id='lastName' placeholder='last name' value=lastName}}
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              {{input class='form-control' id='email' placeholder='email' value=email}}
             </div>
 
             <div class="form-group">
               <label for="password">Password</label>
               {{input class='form-control' id='password' placeholder='password' type='password' value=password}}
             </div>
-       
-            <button {{action 'createNewUser'}} class="btn btn-success">Create New Account</button>
+
+            <button {{action 'signUp'}} class="btn btn-success">Create New Account</button>
             {{#if errorMessage}}
               <p>{{errorMessage}}</p>
             {{/if}}
