@@ -11,8 +11,8 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    save: function(params) {
-      var userId = this.get('session.data.userId');
+    createTicket: function(params) {
+      var userId = this.get('currentUser.content.userId');
       var newTicket = this.store.createRecord('ticket', params);
 
       // grab the user record which matches the session service user

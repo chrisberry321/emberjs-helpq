@@ -3,7 +3,7 @@
 {{log 'USER SESSION DATA' session.data}}
 {{log 'CURRENT USER SERVICE DATA' currentUser.content}}
 
-{{ticket-new save="save" user=model}}
+{{ticket-new createTicket="createTicket"}}
 
 <h3>ticket count: <span class="badge">{{model.tickets.length}}</span></h3>
 <h3>Average ticket lifespan: {{avg-resolution-time model.closedTickets}} minutes</h3>
