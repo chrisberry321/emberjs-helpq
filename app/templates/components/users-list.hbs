@@ -7,18 +7,16 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Username</th>
-          <th>Password</th>
-          <th>Admin</th>
+          <th>First Name</th>
+          <th>Last Name</th>
         </tr>
       </thead>
       <tbody>
         {{#each model as |user|}}
           <tr>
           <th scope="row">{{#link-to 'user' user.id}}{{user.id}}{{/link-to}}</th>
-          <td>{{user.username}}</td>
-          <td>{{user.password}}</td>
-          <td>{{user.admin}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
           </tr>
         {{/each}}
       </tbody>
