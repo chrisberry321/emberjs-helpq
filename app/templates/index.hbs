@@ -11,7 +11,17 @@
 
 {{#each model.tickets as |ticket| }}
   {{#unless ticket.closed}}
-    {{ticket-tile ticket=ticket}}
+
+    {{#if currentUser.content.admin}}
+        {{ticket-tile ticket=ticket}}
+    {{/if}}
+
+    {{#unless currentUser.content.admin}}
+      {{#unless ticket.isPrivate}}
+        {{ticket-tile ticket=ticket}}
+      {{/unless}}
+    {{/unless}}
+
   {{/unless}}
 {{/each}}
 
@@ -19,6 +29,17 @@
 
 {{#each model.tickets as |ticket| }}
   {{#if ticket.closed}}
-    {{ticket-tile ticket=ticket}}
+
+  {{#if currentUser.content.admin}}
+      {{ticket-tile ticket=ticket}}
+  {{/if}}
+
+  {{#unless currentUser.content.admin}}
+    {{#unless ticket.isPrivate}}
+      {{ticket-tile ticket=ticket}}
+    {{/unless}}
+  {{/unless}}
+
+  
   {{/if}}
 {{/each}}

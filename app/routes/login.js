@@ -9,7 +9,6 @@ export default Ember.Route.extend({
         email: email,
         password: password
       }).then(function() {
-        debugger;
         this.controllerFor('application').send('_populateCurrentUser');
       }.bind(this));
     }
