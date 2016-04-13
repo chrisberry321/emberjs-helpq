@@ -2,8 +2,3 @@
 <p><b>{{#link-to 'ticket' ticket.id}}{{ticket.summary}}{{/link-to}}</b><br>
 <i>created {{moment-from-now ticket.datecreated interval=1000}} by {{ticket.user.fullName}} -  {{moment-format ticket.datecreated}}</i></p>
 <hr>
-
-
-{{log ticket.user.firstName}}
-{{log ticket.user.lastName}}
-{{log ticket.user.fullName}}
