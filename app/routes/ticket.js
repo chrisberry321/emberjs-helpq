@@ -29,9 +29,7 @@ export default Ember.Route.extend({
         ticket.save().then(function() {
           return user.save();
         });
-      }); 
+      });
     }
   }
 });
-
-
