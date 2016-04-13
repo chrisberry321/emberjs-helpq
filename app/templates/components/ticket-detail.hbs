@@ -1,15 +1,25 @@
-<p>Ticket Summary: {{model.summary}}</p>
-<p>Submitted By: {{model.user.username}} </p>
-<p>Submitted On: {{moment-format model.datecreated}} </p>
-<p>Closed On: {{moment-format model.dateclosed}}</p>
-<p>Location: {{model.location}}</p>
-<p>Description: {{model.description}}</p>
-<p>Closed: {{model.closed}}</p>
+<h1>STATUS 
+{{#unless model.closed}}
+<span class="label label-primary">OPEN</span>
+{{else}}
+<span class="label label-primary">CLOSED</span>
+{{/unless}}
+</h1>
 
+
+
+<h2>{{model.summary}}</h2>
+<p>Submitted by {{model.user.fullName}} on {{moment-format model.datecreated}} </p>
 {{#unless model.closed}}
 <p>Ticket Age: {{moment-from-now model.datecreated hideSuffix=true}}</p>
 {{/unless}}
+<p>Location: {{model.location}}</p>
+<p>{{model.description}}</p>
 
+{{#if model.closed}}
+<p>Closed on {{moment-format model.dateclosed}} by {{model.closedBy.fullName}}</p>
+<p>Closed: {{model.closed}}</p>
 <p>Duration from open to close: {{moment-duration duration}}</p>
+{{/if}}
 
 {{ticket-resolve ticket=model resolve="resolve"}}

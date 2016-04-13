@@ -6,6 +6,7 @@ export default DS.Model.extend({
   description: DS.attr(),
   datecreated: DS.attr(),
   dateclosed: DS.attr({ defaultValue: "not closed yet..."}),
-  closed: DS.attr('boolean', { defaultValue: false}),
+  closed: DS.attr('boolean', {defaultValue: false}),
+  closedBy: DS.belongsTo('user', {async: true, defaultValue: 'test', inverse: 'ticketsClosed'}),
   user: DS.belongsTo('user', {async: true}),
 });

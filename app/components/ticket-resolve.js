@@ -4,10 +4,13 @@ export default Ember.Component.extend({
 
   actions: {
     resolve: function(ticket) {
+
+      var date = new Date();
+
       var params = {
-        closed: true,
-        dateclosed: Firebase.ServerValue.TIMESTAMP,
+        dateclosed: date.getTime(),
       };
+
       this.sendAction('resolve', ticket, params);
     }
   }
