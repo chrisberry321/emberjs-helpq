@@ -1,7 +1,19 @@
-<p>user information for specific user will be displayed on this page.</p>
+<h1> Welcome, {{model.fullName}}</h1>
 
-<p>ideas for things to include:</p>
-<ul>
-  <li>all questions from specific user</li>
-  <li>all answers from specifc user</li>
-</ul>
+{{#if model.admin}}
+<p>Account type: Teacher (admin)</p>
+{{else}}
+<p>Account type: Student (regular user)</p>
+{{/if}}
+
+<h3>Tickets Created By Me</h3>
+<br>
+{{#each model.tickets as |ticket| }}
+  {{ticket-tile ticket=ticket}}
+{{/each}}
+
+<h3>Tickets Closed By Me</h3>
+<br>
+{{#each model.ticketsClosed as |ticket| }}
+  {{ticket-tile ticket=ticket}}
+{{/each}}

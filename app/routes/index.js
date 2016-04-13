@@ -13,7 +13,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   actions: {
 
-
     createTicket: function(params) {
       var userId = this.get('currentUser.content.userId');
       var newTicket = this.store.createRecord('ticket', params);
