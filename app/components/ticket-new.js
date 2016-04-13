@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+isPrivate: false,
+
   actions: {
     createTicket: function() {
-      debugger;
+
       var date = new Date();
 
       var params = {
@@ -11,7 +13,8 @@ export default Ember.Component.extend({
         summary: this.get('summary') ? this.get('summary'): "",
         description: this.get('description') ? this.get('summary'): "",
         datecreated: date.getTime(),
-      }
+        isPrivate: this.get('isPrivate'),
+      };      
 
       if (params.location === "" || params.summary === "" || params.description === "") {
         return alert('CANNOT BE BLANK!');

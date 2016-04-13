@@ -9,4 +9,5 @@ export default DS.Model.extend({
   closed: DS.attr('boolean', {defaultValue: false}),
   closedBy: DS.belongsTo('user', {async: true, defaultValue: 'test', inverse: 'ticketsClosed'}),
   user: DS.belongsTo('user', {async: true}),
+  isPrivate: DS.attr('boolean', {defaultValue: false}),
 });
