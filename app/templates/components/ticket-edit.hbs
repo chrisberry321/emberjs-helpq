@@ -1,26 +1,26 @@
 {{#if showCommentForm}}
-
   {{#if session.isAuthenticated }}
-    <h1>New Comment For Ticket</h1>
-      <form>
-        <div class="form-group">
-          <label for="comment">Comment:</label>
-          {{textarea rows="3" class="form-control" value=comment id="comment"}}
-        </div>
-        <button class="btn btn-success" {{action 'addComment'}}>Post Your Comment</button>
-        <button class="btn btn-default" {{action 'hideCommentForm'}}>Cancel</button>
-      </form>
+    <div class="row">
+      <div class="col-md-6">
+        <h1>New Comment For Ticket</h1>
+        <form>
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            {{textarea rows="3" class="form-control" value=comment id="comment"}}
+          </div>
+          <button class="btn btn-success" {{action 'addComment'}}>Post Your Comment</button>
+          <button class="btn btn-default" {{action 'hideCommentForm'}}>Cancel</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
   {{else}}
     <p>You must login to add comments to tickets</p>
   {{/if}}
-
 {{else}}
-
 <button class="btn btn-default" {{action 'showCommentForm'}}>Comment</button>
-
-  {{#unless ticket.closed}}
-    <button class="btn btn-success" {{action 'resolve' ticket}}>Resolve</button>
-  {{/unless}}
-
+{{#unless ticket.closed}}
+  <button class="btn btn-success" {{action 'resolve' ticket}}>Resolve</button>
+{{/unless}}
 {{/if}}
-
