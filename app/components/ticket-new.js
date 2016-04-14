@@ -13,7 +13,7 @@ export default Ember.Component.extend({
       var params = {
         location: this.get('location') ? this.get('location'): "",
         summary: this.get('summary') ? this.get('summary'): "",
-        description: this.get('description') ? this.get('summary'): "",
+        description: this.get('description') ? this.get('description'): "",
         datecreated: date.getTime(),
         isPrivate: this.get('isPrivate'),
       };
