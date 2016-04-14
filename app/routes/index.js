@@ -11,6 +11,17 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     });
   },
 
+  setupController: function(controller, model){
+    this._super(controller, model);
+    this.liveUpdate(controller);
+  },
+  liveUpdate: function(controller){
+    var self = this;
+    Ember.run.later(function(){
+      self.refresh();
+    }, 5000);
+  },
+
   actions: {
     createTicket: function(params) {
       var userId = this.get('currentUser.content.userId');
@@ -25,3 +36,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     },
   }
 });
+
+
+
+
+  
+
