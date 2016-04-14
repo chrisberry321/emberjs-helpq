@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-isPrivate: false,
-showTicketForm: false,
+  session: Ember.inject.service('session'),
+  isPrivate: false,
+  showTicketForm: false,
 
   actions: {
     createTicket: function() {

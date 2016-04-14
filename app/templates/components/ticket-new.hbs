@@ -1,36 +1,39 @@
 {{#if showTicketForm}}
-<div class="container, ticket">
+
+  {{#if session.isAuthenticated}}
+  <div class="container, ticket">
     <h1>New Help Ticket</h1>
-    <div>
-      <form class="newTicket">
-        <div class="form-group">
-          <label for="location">Location</label>
-          {{input class="form-control" value=location id="location"}}
-        </div>
+    <form class="newTicket">
+      <div class="form-group">
+        <label for="location">Location</label>
+        {{input class="form-control" value=location id="location"}}
+      </div>
 
-        <div class="form-group">
-          <label for="summary">Summary</label>
-          {{input class="form-control" value=summary id="summary"}}
-        </div>
+      <div class="form-group">
+        <label for="summary">Summary</label>
+        {{input class="form-control" value=summary id="summary"}}
+      </div>
 
-        <div class="form-group">
-          <label for="description">Description</label>
-          {{textarea rows="5" class="form-control" value=description id="description"}}
-        </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        {{textarea rows="5" class="form-control" value=description id="description"}}
+      </div>
 
-        <div class="form-group">
-          {{input type="checkbox" checked=isPrivate id="private"}}
-          <label class="checkbox"> private</label>
-        </div>
+      <div class="form-group">
+        {{input type="checkbox" checked=isPrivate id="private"}}
+        <label class="checkbox"> private</label>
+      </div>
 
 
-        <button class="btn btn-success" {{action 'createTicket'}}>Submit</button>
-        <button class="btn btn-default" {{action 'hideTicketForm'}}>Cancel</button>
-      </form>
-      <br>
-    </div>
-</div>
+      <button class="btn btn-success" {{action 'createTicket'}}>Submit</button>
+      <button class="btn btn-default" {{action 'hideTicketForm'}}>Cancel</button>
+    </form>
+    <br>
+  </div>
+  {{else}}
+    <p>You must be logged in to create new help tickets.</p>
+  {{/if}}
+
 {{else}}
-
 <button class="btn btn-default" {{action 'showTicketForm'}}>Create Ticket</button>
 {{/if}}
