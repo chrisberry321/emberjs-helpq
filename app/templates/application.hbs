@@ -21,13 +21,10 @@
         {{/if}}
 
 
-
         {{#if currentUser.content.admin}}
           {{#nav-link-to 'users'}}<li>USERS</li>{{/nav-link-to}}
         {{/if}}
 
-
-        {{#nav-link-to 'about'}}<li>ABOUT</li>{{/nav-link-to}}
 
         {{#if session.isAuthenticated}}
           {{#nav-link-to 'index' invokeAction='logout'}}<li>LOGOUT</li>{{/nav-link-to}}
