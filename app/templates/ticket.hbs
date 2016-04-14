@@ -1,6 +1,7 @@
 {{ticket-detail model=model resolve="resolve"}}
 
 {{ticket-edit ticket=model addComment="addComment" resolve="resolve" }}
+<br>
 
 {{#each model.comments as |comment|}}
   {{comment-tile comment=comment}}

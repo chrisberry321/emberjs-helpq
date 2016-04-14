@@ -6,7 +6,7 @@
 
 <h3>Average ticket lifespan: {{avg-resolution-time model}} minutes</h3>
 
-<h1>Unresolved Tickets <span class="badge">{{open-ticket-count model}}</span></h1>
+<h1>Unresolved Tickets <span class="badge">{{open-ticket-count model model.length}}</span></h1>
 
 {{#each model as |ticket| }}
   {{#unless ticket.closed}}
@@ -21,7 +21,7 @@
   {{/unless}}
 {{/each}}
 
-<h1>Resolved Tickets<span class="badge">{{closed-ticket-count model}}</span></h1>
+<h1>Resolved Tickets<span class="badge">{{closed-ticket-count model model.length}}</span></h1>
 
 {{#each model as |ticket| }}
   {{#if ticket.closed}}
