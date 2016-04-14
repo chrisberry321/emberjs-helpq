@@ -16,20 +16,19 @@ a.test{
   margin-right: 40px;
   color: #9D9D9D;
   text-decoration: none;
-
 }
 
-/*form.login-form {
-  text-align: center;
+/*.form-control {
+  width: 50vw;
+  box-shadow: 3px 3px 4px #777777;
+
 }*/
-
-
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   background-color: #222222;
 }
 
-body{ 
-  padding-top: 70px; 
+body{
+  padding-top: 70px;
   padding-bottom: 70px;
 }
 
@@ -39,4 +38,15 @@ body{
 
 .logged {
   margin-right: 80px;
+}
+
+.ticket h1{
+  margin-bottom: 30px;
+}
+body .container {
+  padding-top: 40px;
+}
+.checkbox {
+  display: inline-block;
+  margin-left: 4px;
 }

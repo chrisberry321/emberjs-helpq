@@ -10,4 +10,5 @@ export default DS.Model.extend({
   closedBy: DS.belongsTo('user', {async: true, defaultValue: 'test', inverse: 'ticketsClosed'}),
   user: DS.belongsTo('user', {async: true}),
   isPrivate: DS.attr('boolean', {defaultValue: false}),
+  comments: DS.hasMany('comment', {async: true}),
 });

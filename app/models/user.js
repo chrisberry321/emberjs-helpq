@@ -10,5 +10,6 @@ export default DS.Model.extend({
   }),
   admin: DS.attr('boolean', { defaultValue: false}),
   tickets: DS.hasMany('ticket', {async: true}),
-  ticketsClosed: DS.hasMany('ticket', {async: true, inverse: 'closedBy'})
+  ticketsClosed: DS.hasMany('ticket', {async: true, inverse: 'closedBy'}),
+  comments: DS.hasMany('comment', {async: true}),
 });

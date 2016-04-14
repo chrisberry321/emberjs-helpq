@@ -5,22 +5,23 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
 
   model: function() {
-    return Ember.RSVP.hash({
-      tickets: this.store.findAll('ticket'),
-      closedTickets: this.store.query('ticket', { orderBy: 'closed', equalTo: true }),
-    });
+    return this.store.findAll('ticket');
+    // return Ember.RSVP.hash({
+    //   tickets: this.store.findAll('ticket'),
+    //   closedTickets: this.store.query('ticket', { orderBy: 'closed', equalTo: true }),
+    // });
   },
 
-  setupController: function(controller, model){
-    this._super(controller, model);
-    this.liveUpdate(controller);
-  },
-  liveUpdate: function(controller){
-    var self = this;
-    Ember.run.later(function(){
-      self.refresh();
-    }, 5000);
-  },
+  // setupController: function(controller, model){
+  //   this._super(controller, model);
+  //   this.liveUpdate(controller);
+  // },
+  // liveUpdate: function(controller){
+  //   var self = this;
+  //   Ember.run.later(function(){
+  //     self.refresh();
+  //   }, 5000);
+  // },
 
   actions: {
     createTicket: function(params) {
@@ -36,9 +37,3 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     },
   }
 });
-
-
-
-
-  
-

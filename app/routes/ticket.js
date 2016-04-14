@@ -30,6 +30,22 @@ export default Ember.Route.extend({
           return user.save();
         });
       });
-    }
+    },
+
+    addComment: function(params) {
+      var userId = this.get('currentUser.content.userId');
+      var newComment = this.store.createRecord('comment', params);
+      var ticket = params.ticket;
+
+      this.store.findRecord('user', userId).then(function (user) {
+        user.get('comments').addObject(newComment);
+        ticket.get('comments').addObject(newComment);
+        newComment.save().then(function() {
+          return ticket.save().then(function() {
+            return user.save();
+          });
+        });
+      });
+    },
   }
 });
