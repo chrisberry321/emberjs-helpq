@@ -4,19 +4,9 @@
 
 {{ticket-new createTicket="createTicket"}}
 
-<h3>ticket count: <span class="badge">{{model.length}}</span></h3>
-
-
-
-
-
 <h3>Average ticket lifespan: {{avg-resolution-time model}} minutes</h3>
 
-
-
-
-
-<h1>Unresolved Tickets</h1>
+<h1>Unresolved Tickets <span class="badge">{{open-ticket-count model}}</span></h1>
 
 {{#each model as |ticket| }}
   {{#unless ticket.closed}}
@@ -28,11 +18,10 @@
         {{ticket-tile ticket=ticket}}
       {{/if}}
     {{/unless}}
-
   {{/unless}}
 {{/each}}
 
-<h1>Resolved Tickets</h1>
+<h1>Resolved Tickets<span class="badge">{{closed-ticket-count model}}</span></h1>
 
 {{#each model as |ticket| }}
   {{#if ticket.closed}}
