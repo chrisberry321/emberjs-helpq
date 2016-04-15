@@ -8,7 +8,6 @@ export function openTicketCount(params) {
       allOpenTickets.push(allTickets.objectAtContent(i));
     }
   }
-  return allOpenTickets.length
+  return allOpenTickets.length;
 }
-
 export default Ember.Helper.helper(openTicketCount);

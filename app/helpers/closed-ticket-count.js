@@ -8,6 +8,6 @@ export function closedTicketCount(params) {
       allClosedTickets.push(allTickets.objectAtContent(i));
     }
   }
-  return allClosedTickets.length
+  return allClosedTickets.length;
 }
 export default Ember.Helper.helper(closedTicketCount);
