@@ -15,6 +15,4 @@
 {{#if model.closed}}
 <p>Closed on {{moment-format model.dateclosed}} by {{model.closedBy.fullName}}</p>
 <p>Ticket Lifespan: {{moment-duration duration}}</p>
-<p>Closed: {{model.closed}}</p>
-<p>Duration from open to close:{{moment-duration duration}}</p>
 {{/if}}
