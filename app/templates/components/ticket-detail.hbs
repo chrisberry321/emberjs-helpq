@@ -11,7 +11,7 @@
 <p>Ticket Age: {{moment-from-now model.datecreated hideSuffix=true}}</p>
 {{/unless}}
 <p>Location: {{model.location}}</p>
-<p>Description: {{model.description}}</p>
+<p class="description">Description: {{model.description}}</p>
 {{#if model.closed}}
 <p>Closed on {{moment-format model.dateclosed}} by {{model.closedBy.fullName}}</p>
 <p>Ticket Lifespan: {{moment-duration duration}}</p>

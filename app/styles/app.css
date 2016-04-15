@@ -15,11 +15,7 @@ a.test{
   text-decoration: none;
 }
 
-/*.form-control {
-  width: 50vw;
-  box-shadow: 3px 3px 4px #777777;
 
-}*/
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   background-color: #222222;
 }
@@ -93,6 +89,10 @@ body .container {
 .ticketTile {
   display: inline-block;
 }
+.description {
+  max-width: 800px;
+  margin-bottom: 20px;
+}
 
 .commentTile:hover   {
   background: #f4f4f4;
@@ -136,5 +136,4 @@ body .container {
   font: 1.5em;
   margin: 0 0 30px 40px;
   border-radius: 4px;
- }
 }

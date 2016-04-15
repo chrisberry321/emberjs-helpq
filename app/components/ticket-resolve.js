@@ -4,9 +4,7 @@ export default Ember.Component.extend({
 
   actions: {
     resolve: function(ticket) {
-
       var date = new Date();
-
       var params = {
         dateclosed: date.getTime(),
       };
