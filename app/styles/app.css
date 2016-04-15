@@ -98,3 +98,9 @@ body .container {
 .ticket-edit-hbs {
   margin-bottom: 30px;
 }
+.resolve, .back {
+  margin-left: 20px;
+}
+.back a {
+  text-decoration: none;
+}

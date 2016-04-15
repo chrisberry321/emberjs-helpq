@@ -21,7 +21,8 @@
 {{else}}
 <button class="btn btn-default" {{action 'showCommentForm'}}>Comment</button>
 {{#unless ticket.closed}}
-  <button class="btn btn-success" {{action 'resolve' ticket}}>Resolve</button>
+  <button class="btn btn-success resolve" {{action 'resolve' ticket}}>Resolve</button>
 {{/unless}}
 {{/if}}
+<button class="btn btn-default back">{{#link-to 'index'}}Back{{/link-to}}</button>
 </div>
