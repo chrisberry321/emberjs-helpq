@@ -24,5 +24,9 @@
   <button class="btn btn-success resolve" {{action 'resolve' ticket}}>Resolve</button>
 {{/unless}}
 {{/if}}
+{{#unless showCommentForm}}
 <button class="btn btn-default back">{{#link-to 'index'}}Back{{/link-to}}</button>
+{{/unless}}
+
+
 </div>

@@ -17,7 +17,7 @@
       <ul class="nav navbar-nav navbar-right">
 
         {{#if session.isAuthenticated}}
-          {{#nav-link-to 'user' currentUser.content.userId}}<a class="test">You are logged in as {{currentUser.content.firstName}}</a>{{/nav-link-to}}
+          {{#nav-link-to 'user' currentUser.content.userId}}<a class="test">You are logged in as <span class="applicationFirstName">{{currentUser.content.firstName}}</span></a>{{/nav-link-to}}
         {{/if}}
 
         {{#if currentUser.content.admin}}
