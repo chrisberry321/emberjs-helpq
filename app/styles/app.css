@@ -58,7 +58,43 @@ body .container {
 }
 .commentTile {
   width: 40vw;
-  background-color: whitesmoke;
-  padding: 4px;
-  margin: 6px 0;
+  min-width: 360px;
+  max-width: 600px;
+  padding: 8px 12px;
+  margin: 8px 0;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+.index h1 {
+  margin-top: 50px;
+}
+.horizontalRule {
+  width: 55vw;
+  margin-left: 0;
+}
+.status {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.status .label {
+  margin-left: 10px;
+  /*background-color: #6ba6d6;*/
+}
+.ticketFullName {
+  font-weight: bolder;
+  font-size: 1.1em;
+}
+.timeOnCommentTile {
+  color: #bababa;
+  float: right;
+  padding-bottom: 5px;
+}
+.commentTile:hover   {
+  background: #f4f4f4;
+  transform: scale(1.015);
+}
+.ticket-edit-hbs {
+  margin-bottom: 30px;
 }
